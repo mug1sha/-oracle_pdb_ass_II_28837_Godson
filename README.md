@@ -126,3 +126,9 @@ Accessed https://localhost:5500/em using SYS credentials.
 Screenshot of the OEM Dashboard showing the status of CDB$ROOT, ensuring the deleted PDB is not present, and displaying the active user.
 ![Dashboard](screenshots/Dashboard.png)
 ![Accessing Dashboard in browser:](screenshots/DashboardProf.png)
+
+
+
+Repository Link: [\[GitHub URL\]](https://github.com/mug1sha/-oracle_pdb_ass_II_28837_Godson.git) 
+PDB Name Created: go_pdb_28837 
+Issues Encountered: [No]
