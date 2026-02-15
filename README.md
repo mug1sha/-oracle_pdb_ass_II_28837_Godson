@@ -129,6 +129,8 @@ Screenshot of the OEM Dashboard showing the status of CDB$ROOT, ensuring the del
 
 
 
-Repository Link: [\[GitHub URL\]](https://github.com/mug1sha/-oracle_pdb_ass_II_28837_Godson.git) 
-PDB Name Created: go_pdb_28837 
+Repository Link: [\[GitHub URL\]](https://github.com/mug1sha/-oracle_pdb_ass_II_28837_Godson.git).
+
+PDB Name Created: go_pdb_28837.
+
 Issues Encountered: [No]
