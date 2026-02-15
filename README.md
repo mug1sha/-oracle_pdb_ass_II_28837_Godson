@@ -37,9 +37,9 @@ ALTER PLUGGABLE DATABASE go_pdb_28837 OPEN;
 SHOW PDBS;
 
 ```
-Evidence: PDB Creation & State
+
 Screenshot showing the successful creation and READ WRITE open mode of the PDB.
-![alt text](screenshots/task1_creation.png)
+![Give Permissions](screenshots/Grant_Permissions.png)
 
 2. User Creation
 Switched the session container to the new PDB to create the required user and grant privileges.
@@ -60,9 +60,9 @@ GRANT CONNECT, RESOURCE TO godson_plsqlauca_28837;
 SELECT username FROM dba_users WHERE username = 'GODSON_PLSQLAUCA_28837';
 
 ```
-Evidence: User Creation
+
 Screenshot showing the user GODSON_PLSQLAUCA_28837 exists inside the PDB.
-![alt text](screenshots/task1_user_creation.png)
+![Create User](screenshots/CreateUser.png)
 
 Task 2: Create and Delete a PDB
 Objective: Demonstrate the ability to create a temporary PDB (go_to_delete_pdb_28837) and completely remove it from the system.
@@ -78,7 +78,7 @@ ADMIN USER admin IDENTIFIED BY m2027
 FILE_NAME_CONVERT = ('pdbseed', 'go_to_delete_pdb_28837');
 
 ```
-Evidence: Temporary PDB Exists
+
 Screenshot showing the temporary PDB in the list before deletion.
 ![Create PDB go_to_delete_pdb_28837](screenshots/AllDbs.png)
 
@@ -98,7 +98,7 @@ COLUMN name FORMAT A30
 SELECT name, open_mode FROM v$pdbs;
 
 ```
-Evidence: Confirmation of Deletion
+
 Screenshot showing the PDB list effectively removed go_to_delete_pdb_28837.
 ![Delete PDB go_to_delete_pdb_28837](screenshots/DropPDB.png)
 
@@ -122,7 +122,7 @@ EXEC DBMS_XDB_CONFIG.SETHTTPSPORT(5500);
 
 2. Dashboard Access
 Accessed https://localhost:5500/em using SYS credentials.
-Evidence: OEM Dashboard
+
 Screenshot of the OEM Dashboard showing the status of CDB$ROOT, ensuring the deleted PDB is not present, and displaying the active user.
 ![Dashboard](screenshots/Dashboard.png)
 ![Accessing Dashboard in browser:](screenshots/DashboardProf.png)
