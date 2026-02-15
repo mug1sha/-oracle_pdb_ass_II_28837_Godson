@@ -32,8 +32,11 @@ FILE_NAME_CONVERT = ('pdbseed', 'go_pdb_28837');
 -- Open the PDB
 ALTER PLUGGABLE DATABASE go_pdb_28837 OPEN;
 
+
 -- Verify Status
 SHOW PDBS;
+
+```
 Evidence: PDB Creation & State
 Screenshot showing the successful creation and READ WRITE open mode of the PDB.
 ![alt text](screenshots/task1_creation.png)
@@ -41,6 +44,8 @@ Screenshot showing the successful creation and READ WRITE open mode of the PDB.
 2. User Creation
 Switched the session container to the new PDB to create the required user and grant privileges.
 code
+
+```sql
 SQL
 -- Switch Session to the new PDB
 ALTER SESSION SET CONTAINER = go_pdb_28837;
@@ -53,25 +58,35 @@ GRANT CONNECT, RESOURCE TO godson_plsqlauca_28837;
 
 -- Verify User Creation
 SELECT username FROM dba_users WHERE username = 'GODSON_PLSQLAUCA_28837';
+
+```
 Evidence: User Creation
 Screenshot showing the user GODSON_PLSQLAUCA_28837 exists inside the PDB.
 ![alt text](screenshots/task1_user_creation.png)
+
 Task 2: Create and Delete a PDB
 Objective: Demonstrate the ability to create a temporary PDB (go_to_delete_pdb_28837) and completely remove it from the system.
 1. Creation and Verification
 The temporary PDB was created successfully.
 code
+
+
 SQL
+```sql
 CREATE PLUGGABLE DATABASE go_to_delete_pdb_28837
 ADMIN USER admin IDENTIFIED BY m2027 
 FILE_NAME_CONVERT = ('pdbseed', 'go_to_delete_pdb_28837');
+
+```
 Evidence: Temporary PDB Exists
 Screenshot showing the temporary PDB in the list before deletion.
 ![Create PDB go_to_delete_pdb_28837](screenshots/AllDbs.png)
+
 2. Deletion
 The PDB was closed and dropped, including its datafiles.
 code
 SQL
+```sql
 -- Close the PDB
 ALTER PLUGGABLE DATABASE go_to_delete_pdb_28837 CLOSE IMMEDIATE;
 
@@ -81,20 +96,30 @@ DROP PLUGGABLE DATABASE go_to_delete_pdb_28837 INCLUDING DATAFILES;
 -- Confirm Deletion
 COLUMN name FORMAT A30
 SELECT name, open_mode FROM v$pdbs;
+
+```
 Evidence: Confirmation of Deletion
 Screenshot showing the PDB list effectively removed go_to_delete_pdb_28837.
 ![Delete PDB go_to_delete_pdb_28837](screenshots/DropPDB.png)
+
+
 Task 3: Oracle Enterprise Manager (OEM)
 Objective: Configure the Global Port and access the OEM Express Dashboard to monitor the environment.
+
 1. Port Configuration
 Configured the XDB HTTPS port to 5500 and ensured the Listener was active.
 code
 SQL
+
+```sql
 -- Check current port configuration
 SELECT DBMS_XDB_CONFIG.GETHTTPSPORT() FROM DUAL;
 
 -- Enable Port 5500
 EXEC DBMS_XDB_CONFIG.SETHTTPSPORT(5500);
+
+```
+
 2. Dashboard Access
 Accessed https://localhost:5500/em using SYS credentials.
 Evidence: OEM Dashboard
