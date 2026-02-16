@@ -140,9 +140,10 @@ Issues Encountered: No
 - [X] User created inside the PDB
 - [X] Temporary PDB created and deleted
 - [X] OEM dashboard screenshot included
-- [ ] GitHub repository is PUBLIC
-- [ ] README is clear and professional
-- [ ] Deadline respected
+- [X] GitHub repository is PUBLIC
+- [X] README is clear and professional
+- [X] Deadline respected
+
 
 
 
