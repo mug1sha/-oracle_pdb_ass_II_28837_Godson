@@ -137,12 +137,13 @@ PDB Name Created: go_pdb_28837.
 Issues Encountered: No
 
 ## Checklist
-- [ ] User created inside the PDB
+- [x] User created inside the PDB
 - [X] Temporary PDB created and deleted
 - [X] OEM dashboard screenshot included
 - [X] GitHub repository is PUBLIC
 - [X] README is clear and professional
 - [X] Deadline respected
+
 
 
 
